@@ -1,233 +1,327 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Raimana Rataro-Tuihaa — Portfolio</title>
-  <meta name="description" content="Portfolio — Raimana Rataro-Tuihaa. Ingénieur océanographie spatiale, data analyst (Python, MATLAB, R, Copernicus)." />
+  <title>Raimana Rataro-Tuihaa — Data Analyst & Océanographie</title>
+  <meta name="description" content="Portfolio de Raimana Rataro-Tuihaa. Expert données environnementales, Python, Copernicus et modélisation." />
+  
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .hero-bg {
-      background-image: linear-gradient(135deg, rgba(6,95,70,0.08), rgba(3,37,65,0.05));
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            ocean: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
     }
-    html { scroll-behavior: smooth; }
+  </script>
+  
+  <style>
+    /* Animation subtile pour le fond */
+    .gradient-text {
+      background: linear-gradient(to right, #0f172a, #0ea5e9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blob {
+      position: absolute;
+      filter: blur(40px);
+      z-index: -1;
+      opacity: 0.4;
+      animation: move 10s infinite alternate;
+    }
+    @keyframes move {
+      from { transform: translate(0, 0); }
+      to { transform: translate(20px, -20px); }
+    }
   </style>
 </head>
-<body class="font-sans antialiased text-slate-800 bg-white">
-  
-  <header class="sticky top-0 bg-white/70 backdrop-blur z-30 shadow-sm">
+
+<body class="font-sans antialiased text-slate-800 bg-slate-50 relative overflow-x-hidden">
+
+  <div class="blob bg-blue-200 w-96 h-96 rounded-full top-0 left-0 mix-blend-multiply"></div>
+  <div class="blob bg-emerald-200 w-96 h-96 rounded-full bottom-0 right-0 mix-blend-multiply animation-delay-2000"></div>
+
+  <header class="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
     <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <a class="text-lg font-semibold text-slate-900" href="#">Raimana RATARO-TUIHAA</a>
-      <nav class="space-x-4 hidden md:block text-sm font-medium">
-        <a href="#projects" class="hover:text-emerald-600 transition">Projets</a>
-        <a href="#skills" class="hover:text-emerald-600 transition">Compétences</a>
-        <a href="#cv" class="hover:text-emerald-600 transition">CV</a>
-        <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold">R</div>
+        <a class="text-lg font-bold text-slate-900 tracking-tight" href="#">Raimana.RT</a>
+      </div>
+      
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+        <a href="#projects" class="hover:text-ocean-500 transition">Projets</a>
+        <a href="#services" class="hover:text-ocean-500 transition">Services</a>
+        <a href="#cv" class="hover:text-ocean-500 transition">Parcours</a>
       </nav>
-      <a href="#contact" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium transition">Me contacter</a>
+
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-2 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-xs font-semibold text-emerald-700">Dispo Freelance / CDI</span>
+        </div>
+        <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-lg shadow-slate-900/20">Me contacter</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero-bg py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-        Ingénieur Océanographie Spatiale <br/> <span class="text-emerald-600">Data Analyst</span>
+  <section class="pt-40 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block mb-4 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-bold tracking-wide border border-blue-100 uppercase">
+        Master SOAC • Toulouse
+      </div>
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+        Données Spatiales & <br/>
+        <span class="gradient-text">Intelligence Environnementale</span>
       </h1>
-      <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-        Je transforme des données océaniques & satellitaires en résultats exploitables — notebooks pédagogiques, outils automatisés et documentation technique.
+      <p class="mt-6 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        J'aide les laboratoires et entreprises à valoriser leurs données océaniques et atmosphériques grâce à Python, l'automatisation et une documentation technique impeccable.
       </p>
-      <div class="mt-8 flex justify-center gap-4">
-        <a href="#projects" class="px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition">Voir mes projets</a>
-        <a href="#contact" class="px-6 py-3 bg-white border border-slate-300 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition">Me contacter</a>
+      
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#projects" class="group px-8 py-4 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition flex items-center justify-center gap-2">
+          Voir mon Portfolio
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+        <a href="#contact" class="px-8 py-4 bg-white border border-slate-200 text-slate-700 font-semibold rounded-xl hover:border-slate-400 hover:shadow-md transition flex items-center justify-center">
+          Proposer une mission
+        </a>
       </div>
-      <div class="mt-8 text-sm font-semibold text-slate-500 uppercase tracking-wide">
-        Basé à Toulouse • Anglais scientifique • Disponible freelance / CDI
+
+      <div class="mt-12 pt-8 border-t border-slate-200/60">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Technologies maitrisées</p>
+        <div class="flex flex-wrap justify-center gap-6 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+          <span class="flex items-center gap-2 font-bold text-slate-700"><span class="text-yellow-500">Python</span></span>
+          <span class="flex items-center gap-2 font-bold text-slate-700"><span class="text-blue-600">Copernicus</span></span>
+          <span class="flex items-center gap-2 font-bold text-slate-700"><span class="text-red-600">Git</span></span>
+          <span class="flex items-center gap-2 font-bold text-slate-700"><span class="text-green-600">QGIS</span></span>
+          <span class="flex items-center gap-2 font-bold text-slate-700">Linux</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-900">Projets & Études de cas</h2>
-      <p class="text-slate-600 mt-2">Sélection de travaux techniques. Approche orientée solution.</p>
-    </div>
-
-    <div class="grid gap-8 md:grid-cols-2">
-      <article class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition bg-white">
-        <div class="h-48 bg-slate-100 flex items-center justify-center text-slate-400">
-           <span>Capture Notebook / Python</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-900">Support & adaptation Copernicus Marine</h3>
-          <p class="mt-2 text-sm text-slate-600">
-            Migration de notebooks et création d’articles Python/MATLAB/R pour faciliter l’accès aux données via la Copernicus Marine Toolbox.
-          </p>
-          <div class="mt-4 bg-slate-50 p-3 rounded-lg text-sm">
-            <ul class="space-y-1">
-              <li>🎯 <strong>Problème :</strong> Outils obsolètes post-migration MOTU.</li>
-              <li>⚙️ <strong>Solution :</strong> Scripts Python (subset/get), refonte Help Center.</li>
-              <li>✅ <strong>Résultat :</strong> Documentation à jour, ticket support réduits.</li>
-            </ul>
-          </div>
-          <div class="mt-4 flex gap-2 flex-wrap">
-            <span class="text-xs font-semibold px-2 py-1 bg-emerald-100 text-emerald-800 rounded">Python</span>
-            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">NetCDF</span>
-            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">Copernicus</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition bg-white">
-        <div class="h-48 bg-slate-100 flex items-center justify-center text-slate-400">
-           <span>Capture Documentation DART</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-900">Documentation interactive DART & ETL</h3>
-          <p class="mt-2 text-sm text-slate-600">
-            Passage d'une documentation statique à un Wiki interactif et automatisation de l'ingestion de données atmosphériques.
-          </p>
-          <div class="mt-4 bg-slate-50 p-3 rounded-lg text-sm">
-            <ul class="space-y-1">
-              <li>🎯 <strong>Problème :</strong> Doc DOCX lourde, non maintenable.</li>
-              <li>⚙️ <strong>Solution :</strong> Migration MkDocs + Pipeline Python AERONET.</li>
-              <li>✅ <strong>Résultat :</strong> Doc en ligne, simulation reproductible.</li>
-            </ul>
-          </div>
-          <div class="mt-4 flex gap-2 flex-wrap">
-            <span class="text-xs font-semibold px-2 py-1 bg-blue-100 text-blue-800 rounded">Python</span>
-            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">MkDocs</span>
-            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">DART</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="skills" class="bg-slate-50 py-16 border-y border-slate-200">
+  <section id="projects" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-slate-900">Compétences & Services</h2>
-      <p class="mt-2 text-slate-600">Ce que je propose pour vos missions techniques.</p>
-
-      <div class="mt-8 grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-          <h4 class="text-lg font-bold text-emerald-700">Data & Analyse</h4>
-          <ul class="mt-3 text-sm text-slate-600 space-y-2">
-            <li>• Python (xarray, pandas, netCDF)</li>
-            <li>• R & MATLAB (Scripts legacy)</li>
-            <li>• Prétraitement & Fusion de séries</li>
-            <li>• Visualisation scientifique</li>
-          </ul>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-          <h4 class="text-lg font-bold text-emerald-700">Modélisation & Satellites</h4>
-          <ul class="mt-3 text-sm text-slate-600 space-y-2">
-            <li>• DART (Transfert radiatif)</li>
-            <li>• Données AOD & ECMWF / AERONET</li>
-            <li>• Océanographie spatiale</li>
-            <li>• Workflow reproductible</li>
-          </ul>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-          <h4 class="text-lg font-bold text-emerald-700">Support & Tech Writing</h4>
-          <ul class="mt-3 text-sm text-slate-600 space-y-2">
-            <li>• Rédaction technique & Scientifique</li>
-            <li>• Notebooks pédagogiques (Jupyter)</li>
-            <li>• Documentation (MkDocs, Sphinx)</li>
-            <li>• Support utilisateur N2/N3</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cv" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold text-slate-900 mb-8">Parcours</h2>
-    <div class="grid md:grid-cols-3 gap-12">
-      <div class="md:col-span-2 space-y-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12">
         <div>
-          <h3 class="text-xl font-bold text-slate-800">Expériences clés</h3>
-          <div class="mt-4 border-l-2 border-emerald-500 pl-4 space-y-6">
-            <div>
-              <div class="flex justify-between items-baseline">
-                <h4 class="font-bold text-lg">Stage Ingénieur M2</h4>
-                <span class="text-sm text-slate-500">02/2024 – 08/2024</span>
-              </div>
-              <p class="text-emerald-700 font-medium text-sm">AKKODIS / Mercator Ocean International</p>
-              <p class="mt-2 text-slate-600 text-sm">Support Copernicus Marine : Manipulation données océanographiques, scripts Python/MATLAB/R, amélioration de la documentation utilisateur.</p>
-            </div>
-            <div>
-              <div class="flex justify-between items-baseline">
-                <h4 class="font-bold text-lg">Stage M1 Télédétection</h4>
-                <span class="text-sm text-slate-500">04/2023 – 08/2023</span>
-              </div>
-              <p class="text-emerald-700 font-medium text-sm">CESBIO (Centre d'Études Spatiales de la Biosphère)</p>
-              <p class="mt-2 text-slate-600 text-sm">Mise en place documentation interactive DART et scripts d'intégration de données atmosphériques (AERONET/ECMWF).</p>
-            </div>
-          </div>
+          <h2 class="text-3xl font-bold text-slate-900">Projets Récents</h2>
+          <p class="text-slate-500 mt-2">Missions réalisées en entreprise et recherche.</p>
         </div>
+        <a href="https://github.com/votre-pseudo" target="_blank" class="hidden md:inline-flex items-center text-sm font-semibold text-ocean-500 hover:underline">
+          Voir tout sur GitHub →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
         
-        <div class="pt-4">
-            <a class="inline-flex items-center px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition shadow-lg" href="CV_Raimana_RATARO-TUIHAA.pdf" target="_blank">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-            Télécharger mon CV (PDF)
-          </a>
-        </div>
+        <article class="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-2xl transition duration-300">
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-800 border shadow-sm z-10">
+            Mercator Ocean
+          </div>
+          <div class="h-56 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden">
+             <span class="text-slate-400 font-medium">Capture Notebook / Analyse</span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 group-hover:text-ocean-500 transition">Migration & Support Copernicus Marine</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              Refonte complète des outils d'accès aux données satellitaires (CMT). Création de scripts Python robustes pour remplacer les processus legacy.
+            </p>
+            
+            <div class="my-6 space-y-2">
+              <div class="flex items-start gap-2 text-sm">
+                <span class="text-green-500 mt-1">✓</span>
+                <span class="text-slate-600">Automatisation des requêtes NetCDF</span>
+              </div>
+              <div class="flex items-start gap-2 text-sm">
+                <span class="text-green-500 mt-1">✓</span>
+                <span class="text-slate-600">Réduction de 40% des tickets support</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2 mb-6">
+              <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded">Python</span>
+              <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded">Data Eng.</span>
+            </div>
+
+            <a href="#" class="inline-flex items-center justify-center w-full py-3 border border-slate-200 rounded-lg text-sm font-semibold hover:bg-slate-50 transition">
+              Lire l'étude de cas
+            </a>
+          </div>
+        </article>
+
+        <article class="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-2xl transition duration-300">
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-800 border shadow-sm z-10">
+            CESBIO
+          </div>
+          <div class="h-56 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center overflow-hidden">
+             <span class="text-slate-400 font-medium">Capture Documentation DART</span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 group-hover:text-ocean-500 transition">Pipeline de Données Atmosphériques</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              Développement d'un connecteur Python pour injecter les données AERONET & ECMWF dans le modèle DART. Modernisation de la documentation.
+            </p>
+
+            <div class="my-6 space-y-2">
+              <div class="flex items-start gap-2 text-sm">
+                <span class="text-green-500 mt-1">✓</span>
+                <span class="text-slate-600">Documentation déployée sur MkDocs</span>
+              </div>
+              <div class="flex items-start gap-2 text-sm">
+                <span class="text-green-500 mt-1">✓</span>
+                <span class="text-slate-600">Reproductibilité des simulations</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2 mb-6">
+              <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded">ETL</span>
+              <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded">DART</span>
+            </div>
+
+            <a href="#" class="inline-flex items-center justify-center w-full py-3 border border-slate-200 rounded-lg text-sm font-semibold hover:bg-slate-50 transition">
+              Voir le code (Extrait)
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold">Mes Services & Expertises</h2>
+        <p class="text-slate-400 mt-2">Prêt à intégrer vos équipes techniques ou scientifiques.</p>
       </div>
 
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-bold text-slate-800">Formation</h3>
-          <div class="mt-2 text-sm">
-            <p class="font-semibold">Master SOAC</p>
-            <p class="text-slate-500">Sciences de l'Océan, de l'Atmosphère et du Climat</p>
-            <p class="text-slate-400 text-xs mt-1">Université Paul Sabatier, Toulouse</p>
-          </div>
-        </div>
-        <div>
-          <h3 class="font-bold text-slate-800">Langues</h3>
-          <ul class="mt-2 text-sm text-slate-600 space-y-1">
-            <li>🇫🇷 Français (Natif)</li>
-            <li>🇬🇧 Anglais (Scientifique / Technique)</li>
-            <li>🇪🇸 Espagnol (Intermédiaire)</li>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-ocean-500 transition duration-300">
+          <div class="w-12 h-12 bg-ocean-900 rounded-lg flex items-center justify-center mb-6 text-2xl">📊</div>
+          <h3 class="text-xl font-bold">Data Analyse & Viz</h3>
+          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+            Traitement de grands jeux de données (NetCDF, GRIB). Création de dashboards et visualisations scientifiques pour rapports d'impact.
+          </p>
+          <ul class="mt-4 text-sm text-ocean-500 font-medium space-y-1">
+            <li>• Pandas / Xarray / NumPy</li>
+            <li>• Matplotlib / Seaborn</li>
           </ul>
         </div>
-        <div>
-            <h3 class="font-bold text-slate-800">Stack Technique</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-                <span class="text-xs border px-2 py-1 rounded">Python</span>
-                <span class="text-xs border px-2 py-1 rounded">QGIS</span>
-                <span class="text-xs border px-2 py-1 rounded">Git</span>
-                <span class="text-xs border px-2 py-1 rounded">Linux</span>
-            </div>
+
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-ocean-500 transition duration-300">
+          <div class="w-12 h-12 bg-ocean-900 rounded-lg flex items-center justify-center mb-6 text-2xl">🌍</div>
+          <h3 class="text-xl font-bold">Géospatial & Satellites</h3>
+          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+            Manipulation de données géospatiales. Intégration de données Sentinel/Copernicus dans vos workflows QGIS ou Python.
+          </p>
+          <ul class="mt-4 text-sm text-ocean-500 font-medium space-y-1">
+            <li>• QGIS / ArcGIS</li>
+            <li>• Imagerie Satellitaire</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-ocean-500 transition duration-300">
+          <div class="w-12 h-12 bg-ocean-900 rounded-lg flex items-center justify-center mb-6 text-2xl">📝</div>
+          <h3 class="text-xl font-bold">Technical Writing</h3>
+          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+            Je rends vos outils utilisables. Rédaction de documentation, création de tutoriels interactifs (Notebooks) et vulgarisation.
+          </p>
+          <ul class="mt-4 text-sm text-ocean-500 font-medium space-y-1">
+            <li>• Jupyter Notebooks</li>
+            <li>• MkDocs / Sphinx</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <footer id="contact" class="bg-slate-900 text-white py-12">
+  <section id="cv" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-xl">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-slate-100 pb-8">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900">Mon Parcours</h2>
+          <p class="text-slate-500 mt-1">Formation académique et expérience terrain.</p>
+        </div>
+        <a href="CV_Raimana_RATARO-TUIHAA.pdf" target="_blank" class="mt-4 md:mt-0 inline-flex items-center px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          Télécharger le CV PDF
+        </a>
+      </div>
+
+      <div class="space-y-8">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <div class="md:w-32 text-slate-500 font-semibold text-sm whitespace-nowrap">2024 (6 mois)</div>
+          <div class="relative pl-6 border-l-2 border-slate-200">
+            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-ocean-500 border-4 border-white"></div>
+            <h3 class="font-bold text-lg text-slate-900">Stage Ingénieur Data & Support</h3>
+            <span class="text-ocean-800 font-medium text-sm bg-ocean-50 px-2 py-1 rounded">AKKODIS / Mercator Ocean</span>
+            <p class="mt-2 text-slate-600 text-sm">Développement Python, support technique niveau 2/3 pour les utilisateurs des données Copernicus, rédaction technique.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <div class="md:w-32 text-slate-500 font-semibold text-sm whitespace-nowrap">2023 (4 mois)</div>
+          <div class="relative pl-6 border-l-2 border-slate-200">
+            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+            <h3 class="font-bold text-lg text-slate-900">Stage Télédétection & Modélisation</h3>
+            <span class="text-slate-700 font-medium text-sm bg-slate-100 px-2 py-1 rounded">CESBIO</span>
+            <p class="mt-2 text-slate-600 text-sm">Mise en place de documentation interactive pour le modèle DART et scripts d'intégration de données atmosphériques.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <div class="md:w-32 text-slate-500 font-semibold text-sm whitespace-nowrap">2022 - 2024</div>
+          <div class="relative pl-6 border-l-2 border-slate-200">
+            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+            <h3 class="font-bold text-lg text-slate-900">Master SOAC</h3>
+            <span class="text-slate-700 font-medium text-sm bg-slate-100 px-2 py-1 rounded">Université Paul Sabatier</span>
+            <p class="mt-2 text-slate-600 text-sm">Sciences de l'Océan, de l'Atmosphère et du Climat. Spécialité Etudes Environnementales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="bg-slate-50 pt-20 pb-10 border-t border-slate-200">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold">Intéressé par mon profil ?</h2>
-      <p class="mt-4 text-slate-400">
-        Je suis disponible pour discuter de projets en océanographie, data analyse ou modélisation.
+      <h2 class="text-4xl font-extrabold text-slate-900">Travaillons ensemble.</h2>
+      <p class="mt-4 text-xl text-slate-600">
+        Vous avez des données océaniques à exploiter ou un projet de modélisation ?
       </p>
       
-      <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-6">
-        <a href="mailto:ratarotahiti@icloud.com" class="flex items-center text-lg hover:text-emerald-400 transition">
-            ✉️ ratarotahiti@icloud.com
+      <div class="mt-10 flex flex-col md:flex-row justify-center gap-6">
+        <a href="mailto:ratarotahiti@icloud.com" class="flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition shadow-xl shadow-slate-900/10">
+          <span>📧</span> ratarotahiti@icloud.com
         </a>
-        <span class="hidden md:inline text-slate-600">|</span>
-        <a href="tel:+33638595777" class="flex items-center text-lg hover:text-emerald-400 transition">
-            📞 +33 6 38 59 57 77
+        <a href="https://linkedin.com/in/votre-pseudo" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-xl font-semibold hover:border-blue-400 hover:text-blue-600 transition">
+          <span>💼</span> LinkedIn
         </a>
       </div>
 
-      <div class="mt-8 flex justify-center gap-6">
-        <a href="https://github.com/votre-pseudo" target="_blank" class="text-slate-400 hover:text-white transition">GitHub</a>
-        <a href="https://linkedin.com/in/votre-pseudo" target="_blank" class="text-slate-400 hover:text-white transition">LinkedIn</a>
-      </div>
-      
-      <p class="mt-12 text-xs text-slate-600">
-        © 2024 Raimana Rataro-Tuihaa • Fait avec Tailwind CSS
+      <p class="mt-16 text-sm text-slate-400">
+        &copy; 2024 Raimana Rataro-Tuihaa • Toulouse, France.<br>
+        <span class="opacity-50">Développé pour GitHub Pages.</span>
       </p>
     </div>
   </footer>
