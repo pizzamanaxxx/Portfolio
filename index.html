@@ -5,189 +5,232 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Raimana Rataro-Tuihaa — Portfolio</title>
   <meta name="description" content="Portfolio — Raimana Rataro-Tuihaa. Ingénieur océanographie spatiale, data analyst (Python, MATLAB, R, Copernicus)." />
-  <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* small extra styles */
     .hero-bg {
       background-image: linear-gradient(135deg, rgba(6,95,70,0.08), rgba(3,37,65,0.05));
     }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body class="font-sans antialiased text-slate-800 bg-white">
-  <!-- NAV -->
-  <header class="sticky top-0 bg-white/70 backdrop-blur z-30">
+  
+  <header class="sticky top-0 bg-white/70 backdrop-blur z-30 shadow-sm">
     <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <a class="text-lg font-semibold" href="#">Raimana RATARO-TUIHAA</a>
-      <nav class="space-x-4 hidden md:block">
-        <a href="#projects" class="hover:underline">Projets</a>
-        <a href="#skills" class="hover:underline">Compétences</a>
-        <a href="#cv" class="hover:underline">CV</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+      <a class="text-lg font-semibold text-slate-900" href="#">Raimana RATARO-TUIHAA</a>
+      <nav class="space-x-4 hidden md:block text-sm font-medium">
+        <a href="#projects" class="hover:text-emerald-600 transition">Projets</a>
+        <a href="#skills" class="hover:text-emerald-600 transition">Compétences</a>
+        <a href="#cv" class="hover:text-emerald-600 transition">CV</a>
+        <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
       </nav>
-      <a href="#contact" class="inline-block bg-emerald-600 text-white px-3 py-2 rounded-md text-sm">Me contacter</a>
+      <a href="#contact" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium transition">Me contacter</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-bg py-16">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-3xl md:text-5xl font-bold">Ingénieur océanographie spatiale • Data analyst</h1>
-      <p class="mt-4 text-lg md:text-xl text-slate-600">
+  <section class="hero-bg py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        Ingénieur Océanographie Spatiale <br/> <span class="text-emerald-600">Data Analyst</span>
+      </h1>
+      <p class="mt-6 text-lg text-slate-600 leading-relaxed">
         Je transforme des données océaniques & satellitaires en résultats exploitables — notebooks pédagogiques, outils automatisés et documentation technique.
       </p>
-      <div class="mt-6 flex justify-center gap-4">
-        <a href="#projects" class="px-5 py-3 bg-slate-800 text-white rounded-md">Voir mes projets</a>
-        <a href="#contact" class="px-5 py-3 border border-slate-300 rounded-md">Me contacter</a>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#projects" class="px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition">Voir mes projets</a>
+        <a href="#contact" class="px-6 py-3 bg-white border border-slate-300 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition">Me contacter</a>
       </div>
-      <div class="mt-8 text-sm text-slate-500">Basé à Toulouse • Anglais scientifique • Disponible pour CDI / missions freelance</div>
+      <div class="mt-8 text-sm font-semibold text-slate-500 uppercase tracking-wide">
+        Basé à Toulouse • Anglais scientifique • Disponible freelance / CDI
+      </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-2xl font-semibold">Projets & études de cas</h2>
-    <p class="text-slate-600 mt-2">Sélection de travaux réalisés en stages — chaque projet contient Problème • Solution • Résultat.</p>
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold text-slate-900">Projets & Études de cas</h2>
+      <p class="text-slate-600 mt-2">Sélection de travaux techniques. Approche orientée solution.</p>
+    </div>
 
-    <div class="mt-6 grid gap-6 md:grid-cols-2">
-      <!-- Project 1 -->
-      <article class="border rounded-lg p-5 shadow-sm">
-        <img src="images/copernicus-placeholder.png" alt="" class="w-full h-40 object-cover rounded-md">
-        <h3 class="mt-4 text-lg font-bold">Support & adaptation Copernicus Marine (Mercator / AKKODIS)</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Migration de notebooks et création d’articles Python/MATLAB/R pour faciliter l’accès aux données via la Copernicus Marine Toolbox. 
-        </p>
-        <ul class="mt-3 text-sm space-y-1">
-          <li><strong>Problème :</strong> outils et notebooks obsolètes après migration MOTU → CMT.</li>
-          <li><strong>Solution :</strong> adaptation Jupyter, scripts Python (subset/get/open.dataset), scraping et refonte du Help Center. </li>
-          <li><strong>Résultat :</strong> notebooks mis à jour, articles publiés et amélioration du support technique. </li>
-        </ul>
-        <div class="mt-4 flex gap-2 flex-wrap">
-          <span class="text-xs px-2 py-1 bg-emerald-50 rounded">Python</span>
-          <span class="text-xs px-2 py-1 bg-emerald-50 rounded">NetCDF</span>
-          <span class="text-xs px-2 py-1 bg-emerald-50 rounded">Copernicus CMT</span>
-          <span class="text-xs px-2 py-1 bg-emerald-50 rounded">Documentation</span>
+    <div class="grid gap-8 md:grid-cols-2">
+      <article class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition bg-white">
+        <div class="h-48 bg-slate-100 flex items-center justify-center text-slate-400">
+           <span>Capture Notebook / Python</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-slate-900">Support & adaptation Copernicus Marine</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Migration de notebooks et création d’articles Python/MATLAB/R pour faciliter l’accès aux données via la Copernicus Marine Toolbox.
+          </p>
+          <div class="mt-4 bg-slate-50 p-3 rounded-lg text-sm">
+            <ul class="space-y-1">
+              <li>🎯 <strong>Problème :</strong> Outils obsolètes post-migration MOTU.</li>
+              <li>⚙️ <strong>Solution :</strong> Scripts Python (subset/get), refonte Help Center.</li>
+              <li>✅ <strong>Résultat :</strong> Documentation à jour, ticket support réduits.</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex gap-2 flex-wrap">
+            <span class="text-xs font-semibold px-2 py-1 bg-emerald-100 text-emerald-800 rounded">Python</span>
+            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">NetCDF</span>
+            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">Copernicus</span>
+          </div>
         </div>
       </article>
 
-      <!-- Project 2 -->
-      <article class="border rounded-lg p-5 shadow-sm">
-        <img src="images/dart-placeholder.png" alt="" class="w-full h-40 object-cover rounded-md">
-        <h3 class="mt-4 text-lg font-bold">Documentation interactive DART & intégration AERONET/ECMWF</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Migration de la doc DART en Markdown + déploiement (MkDocs) et scripts Python pour intégrer AERONET/ECMWF. 
-        </p>
-        <ul class="mt-3 text-sm space-y-1">
-          <li><strong>Problème :</strong> documentation DOCX non-maintenable et pas en ligne.</li>
-          <li><strong>Solution :</strong> conversion en wiki Markdown, déploiement MkDocs, script Python ETL pour DART. </li>
-          <li><strong>Résultat :</strong> doc en ligne, programme Python intégré et meilleure reproductibilité des simulations.</li>
-        </ul>
-        <div class="mt-4 flex gap-2 flex-wrap">
-          <span class="text-xs px-2 py-1 bg-sky-50 rounded">Python</span>
-          <span class="text-xs px-2 py-1 bg-sky-50 rounded">DART</span>
-          <span class="text-xs px-2 py-1 bg-sky-50 rounded">MkDocs</span>
+      <article class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition bg-white">
+        <div class="h-48 bg-slate-100 flex items-center justify-center text-slate-400">
+           <span>Capture Documentation DART</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-slate-900">Documentation interactive DART & ETL</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Passage d'une documentation statique à un Wiki interactif et automatisation de l'ingestion de données atmosphériques.
+          </p>
+          <div class="mt-4 bg-slate-50 p-3 rounded-lg text-sm">
+            <ul class="space-y-1">
+              <li>🎯 <strong>Problème :</strong> Doc DOCX lourde, non maintenable.</li>
+              <li>⚙️ <strong>Solution :</strong> Migration MkDocs + Pipeline Python AERONET.</li>
+              <li>✅ <strong>Résultat :</strong> Doc en ligne, simulation reproductible.</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex gap-2 flex-wrap">
+            <span class="text-xs font-semibold px-2 py-1 bg-blue-100 text-blue-800 rounded">Python</span>
+            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">MkDocs</span>
+            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-700 rounded">DART</span>
+          </div>
         </div>
       </article>
-
-      <!-- Add more projects/cards as needed -->
-    </div>
-
-    <div class="mt-6 text-right">
-      <a href="#cv" class="text-sm underline">Voir mon CV complet</a>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="bg-slate-50 py-12">
+  <section id="skills" class="bg-slate-50 py-16 border-y border-slate-200">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-2xl font-semibold">Compétences & services</h2>
-      <p class="mt-2 text-slate-600">Ce que je propose aux recruteurs et clients freelance :</p>
+      <h2 class="text-3xl font-bold text-slate-900">Compétences & Services</h2>
+      <p class="mt-2 text-slate-600">Ce que je propose pour vos missions techniques.</p>
 
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-4 border rounded">
-          <h4 class="font-semibold">Data & Analyse</h4>
-          <ul class="mt-2 text-sm text-slate-600 space-y-1">
-            <li>Python (xarray, pandas, netCDF) • R • MATLAB.</li>
-            <li>Prétraitement, fusion de séries, visualisation.</li>
+      <div class="mt-8 grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+          <h4 class="text-lg font-bold text-emerald-700">Data & Analyse</h4>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>• Python (xarray, pandas, netCDF)</li>
+            <li>• R & MATLAB (Scripts legacy)</li>
+            <li>• Prétraitement & Fusion de séries</li>
+            <li>• Visualisation scientifique</li>
           </ul>
         </div>
-        <div class="p-4 border rounded">
-          <h4 class="font-semibold">Modélisation & Télédétection</h4>
-          <ul class="mt-2 text-sm text-slate-600 space-y-1">
-            <li>DART, radiative transfer, AOD, intégration ECMWF / AERONET.</li>
-            <li>Simulations océan-atmosphère et workflow reproductible.</li>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+          <h4 class="text-lg font-bold text-emerald-700">Modélisation & Satellites</h4>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>• DART (Transfert radiatif)</li>
+            <li>• Données AOD & ECMWF / AERONET</li>
+            <li>• Océanographie spatiale</li>
+            <li>• Workflow reproductible</li>
           </ul>
         </div>
-        <div class="p-4 border rounded">
-          <h4 class="font-semibold">Support & Documentation</h4>
-          <ul class="mt-2 text-sm text-slate-600 space-y-1">
-            <li>Rédaction de guides, e-learning, notebooks pédagogiques, MkDocs.</li>
-            <li>Help center, vérification liens, automatisation docs.</li>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+          <h4 class="text-lg font-bold text-emerald-700">Support & Tech Writing</h4>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>• Rédaction technique & Scientifique</li>
+            <li>• Notebooks pédagogiques (Jupyter)</li>
+            <li>• Documentation (MkDocs, Sphinx)</li>
+            <li>• Support utilisateur N2/N3</li>
           </ul>
-        </div>
-      </div>
-
-      <div class="mt-6">
-        <h5 class="font-semibold">Tech stack</h5>
-        <div class="mt-2 flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-white border rounded text-sm">Python</span>
-          <span class="px-2 py-1 bg-white border rounded text-sm">MATLAB</span>
-          <span class="px-2 py-1 bg-white border rounded text-sm">R</span>
-          <span class="px-2 py-1 bg-white border rounded text-sm">NetCDF / xarray</span>
-          <span class="px-2 py-1 bg-white border rounded text-sm">CMT</span>
-          <span class="px-2 py-1 bg-white border rounded text-sm">Git / GitHub</span>
-          <span class="px-2 py-1 bg-white border rounded text-sm">QGIS</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CV / PARCOURS -->
-  <section id="cv" class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-2xl font-semibold">Parcours & CV</h2>
-    <div class="mt-4 md:flex gap-8">
-      <div class="md:w-2/3">
-        <h3 class="font-bold">Expériences clés</h3>
-        <ul class="mt-2 space-y-2 text-sm text-slate-700">
-          <li><strong>02/2024 – 08/2024</strong> — Stage Master 2 @ AKKODIS / Mercator Ocean — Manipulation données océanographiques, scripts Python/MATLAB/R, support Copernicus. :contentReference[oaicite:36]{index=36}</li>
-          <li><strong>04/2023 – 08/2023</strong> — Stage M1 @ CESBIO — Documentation interactive DART, intégration AERONET/ECMWF. :contentReference[oaicite:37]{index=37}</li>
-        </ul>
-        <div class="mt-4">
-          <a class="inline-block px-4 py-2 bg-slate-800 text-white rounded" href="CV_Raimana_RATARO-TUIHAA.pdf" download> Télécharger mon CV (PDF)</a>
+  <section id="cv" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8">Parcours</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-8">
+        <div>
+          <h3 class="text-xl font-bold text-slate-800">Expériences clés</h3>
+          <div class="mt-4 border-l-2 border-emerald-500 pl-4 space-y-6">
+            <div>
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-bold text-lg">Stage Ingénieur M2</h4>
+                <span class="text-sm text-slate-500">02/2024 – 08/2024</span>
+              </div>
+              <p class="text-emerald-700 font-medium text-sm">AKKODIS / Mercator Ocean International</p>
+              <p class="mt-2 text-slate-600 text-sm">Support Copernicus Marine : Manipulation données océanographiques, scripts Python/MATLAB/R, amélioration de la documentation utilisateur.</p>
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-bold text-lg">Stage M1 Télédétection</h4>
+                <span class="text-sm text-slate-500">04/2023 – 08/2023</span>
+              </div>
+              <p class="text-emerald-700 font-medium text-sm">CESBIO (Centre d'Études Spatiales de la Biosphère)</p>
+              <p class="mt-2 text-slate-600 text-sm">Mise en place documentation interactive DART et scripts d'intégration de données atmosphériques (AERONET/ECMWF).</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pt-4">
+            <a class="inline-flex items-center px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition shadow-lg" href="CV_Raimana_RATARO-TUIHAA.pdf" target="_blank">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Télécharger mon CV (PDF)
+          </a>
         </div>
       </div>
-      <div class="md:w-1/3">
-        <h3 class="font-bold">Éducation</h3>
-        <p class="text-sm mt-2">Master SOAC — Sciences de l'Océan, de l'Atmosphère et du Climat — Université Paul Sabatier. :contentReference[oaicite:38]{index=38}</p>
-        <h3 class="font-bold mt-4">Langues</h3>
-        <p class="text-sm mt-2">Français (natif), Anglais scientifique (bon), Espagnol (intermédiaire). :contentReference[oaicite:39]{index=39}</p>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-bold text-slate-800">Formation</h3>
+          <div class="mt-2 text-sm">
+            <p class="font-semibold">Master SOAC</p>
+            <p class="text-slate-500">Sciences de l'Océan, de l'Atmosphère et du Climat</p>
+            <p class="text-slate-400 text-xs mt-1">Université Paul Sabatier, Toulouse</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-800">Langues</h3>
+          <ul class="mt-2 text-sm text-slate-600 space-y-1">
+            <li>🇫🇷 Français (Natif)</li>
+            <li>🇬🇧 Anglais (Scientifique / Technique)</li>
+            <li>🇪🇸 Espagnol (Intermédiaire)</li>
+          </ul>
+        </div>
+        <div>
+            <h3 class="font-bold text-slate-800">Stack Technique</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+                <span class="text-xs border px-2 py-1 rounded">Python</span>
+                <span class="text-xs border px-2 py-1 rounded">QGIS</span>
+                <span class="text-xs border px-2 py-1 rounded">Git</span>
+                <span class="text-xs border px-2 py-1 rounded">Linux</span>
+            </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <footer id="contact" class="bg-slate-900 text-white py-10">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-2xl font-semibold">Contact</h2>
-      <p class="mt-2 text-slate-300">Email : <a href="mailto:ratarotahiti@icloud.com" class="underline">ratarotahiti@icloud.com</a> • Téléphone : +33 6 38 59 57 77</p>
-      <div class="mt-4 flex gap-3">
-        <a href="https://github.com/your-github" class="text-slate-300 underline">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-linkedin" class="text-slate-300 underline">LinkedIn</a>
+  <footer id="contact" class="bg-slate-900 text-white py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold">Intéressé par mon profil ?</h2>
+      <p class="mt-4 text-slate-400">
+        Je suis disponible pour discuter de projets en océanographie, data analyse ou modélisation.
+      </p>
+      
+      <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-6">
+        <a href="mailto:ratarotahiti@icloud.com" class="flex items-center text-lg hover:text-emerald-400 transition">
+            ✉️ ratarotahiti@icloud.com
+        </a>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <a href="tel:+33638595777" class="flex items-center text-lg hover:text-emerald-400 transition">
+            📞 +33 6 38 59 57 77
+        </a>
       </div>
-      <p class="mt-6 text-xs text-slate-400">Basé à Toulouse • Disponible pour CDI / CDD / missions freelance</p>
+
+      <div class="mt-8 flex justify-center gap-6">
+        <a href="https://github.com/votre-pseudo" target="_blank" class="text-slate-400 hover:text-white transition">GitHub</a>
+        <a href="https://linkedin.com/in/votre-pseudo" target="_blank" class="text-slate-400 hover:text-white transition">LinkedIn</a>
+      </div>
+      
+      <p class="mt-12 text-xs text-slate-600">
+        © 2024 Raimana Rataro-Tuihaa • Fait avec Tailwind CSS
+      </p>
     </div>
   </footer>
 
-  <script>
-    // Small JS: smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
-        if(!id) return;
-        document.getElementById(id).scrollIntoView({behavior:'smooth'});
-      });
-    });
-  </script>
 </body>
 </html>
